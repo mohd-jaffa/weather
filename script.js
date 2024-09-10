@@ -6,23 +6,21 @@ let cloudsElement = document.getElementById('clouds');
 let humidityElement = document.getElementById('humidity');
 let pressureElement = document.getElementById('pressure');
 
-const searchButton = document.querySelector('.btn'); // Reference to the search button
+const searchButton = document.querySelector('.btn');
 
 searchButton.addEventListener('click', (event) => {
-    event.preventDefault(); // Prevent form submission
-
+    event.preventDefault();
     const APIKey = '7a7fee5d9a21efe33efdcbe9c3b9d277';
-    const city = valueSearch.value; // Get the city from the input field
+    const city = valueSearch.value;
 
-    if (city === '') return; // Do nothing if input is empty
+    if (city === '') return;
 
-    // Fetch the weather data
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${APIKey}`)
         .then(response => response.json())
         .then(json => {
-            console.log(json); // Debugging: print the weather data
+            console.log(json);
 
-            // Update the UI with the fetched weather data
+
             cityElement.querySelector('figcaption').innerText = json.name;
             cityElement.querySelector('img').src = `https://openweathermap.org/img/wn/${json.weather[0].icon}@4x.png`; // Use OpenWeather API icon
 
