@@ -8,6 +8,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="/mystyle.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        .scrollable-forecast {
+            overflow-x: auto;
+            display: flex;
+            gap: 10px;
+        }
+        .forecast-card {
+            min-width: 120px;
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .forecast-card img {
+            width: 50px;
+        }
+    </style>
 </head>
 <body class="d-flex flex-column min-vh-100">
 
@@ -19,7 +36,7 @@
     </nav>
 
 
-    <div class="d-flex justify-content-center align-items-center vh-100">
+    <div class="d-flex justify-content-center align-items-center vh-100 mt-5 mb-5">
         <div class="container m-5" style="background: #92736C; max-width: 400px; border-radius: 20px;">
             <div class="row mt-3">
                 <div class="col">
@@ -35,7 +52,7 @@
             <div class="row  mt-3 text-center">
                 <div class="col">
                     <figure class="figure" id="city">
-                        <figcaption class="figure-caption text-center text-white fw-bold fs-3 mb-4">London</figcaption>
+                        <figcaption class="figure-caption text-center text-white fw-bold fs-3 mb-4">search any city</figcaption>
                         <img src="images/rain.png" class="figure-img img-fluid w-75 d-block mx-auto" alt="weather image">
                       </figure>                      
                 </div>
@@ -74,6 +91,14 @@
                 </div>
             </div>
 
+            <div class="row mt-3 mb-3">
+                <div class="col mb-2">
+                    <div class="scrollable-forecast p-2">
+                        <div id="forecast" class="d-flex gap-2"></div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
       
@@ -83,7 +108,7 @@
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/@popperj s/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="js/bootstrap.js"></script>
     <script src="script.js"></script>
 </body>
